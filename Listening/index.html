@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening</title>
+    <link rel="stylesheet" href="style.css">  <!-- Link to the external CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(38, 45, 88);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .basic-button {
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="dotContainer"></div>
+
+    <div class="ripple-container">
+        <div class="ripple"></div>
+        <div class="ripple" style="animation-delay: 1s;"></div>
+    </div>
+    <div class="round-shape">Listening</div>
+
+    <div class="timer-box" id="timer">00:00</div>
+
+
+    <a href="Listening/index.html" id="aboutLink">
+        <button class="restart-button" onclick="reloadPage(event)">Restart</button></a>
+    <script>
+        function reloadPage(event) {
+            // Prevent the default link behavior
+            event.preventDefault();
+            // Reload the current page
+            window.location.reload();
+        }
+    </script>
+
+
+    <a href="Analysis/index.html">
+        <button class="stop-button">Stop Session</button>
+    </a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+</html>

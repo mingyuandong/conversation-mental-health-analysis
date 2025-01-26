@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(38, 45, 88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basic-button {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    font-size: 28px;
+    letter-spacing: 2px; /* Adds 2 pixels of space between characters */
+    font-family: "Outfit", serif;
+    color: rgb(38, 45, 88);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.basic-button:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,46 @@
+.restart-button {
+    position: fixed;
+    bottom: 50px; /* 50px from the bottom of the page */
+    left: 50%; /* Aligns to the center horizontally */
+    transform: translateX(-50%); /* Adjusts for the button's own width */
+    background-color: white;
+    color: rgb(38, 45, 88);
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "Outfit", serif;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 11;
+    text-align: center;
+    width: 160px;
+}
+
+.restart-button:hover {
+    background-color: rgb(185, 216, 252);
+  }
+
+  .analysis-box {
+    display: inline-block; /* Ensures it takes only the required space */
+    width: 80vw; /* Set the width of the circle */
+    top: 120px;
+    bottom: 120px;
+    padding: 20px 10px;
+    border-radius: 2%; /* Makes it circular */
+    background: linear-gradient(
+        180deg, 
+        rgb(215, 214, 253), 
+        rgb(204, 247, 247) 
+    );
+    color:rgb(38, 45, 88); /* Text color */
+    font-size: 14px;
+    font-family: "Outfit", serif;
+    letter-spacing: 0.6px;
+    line-height: 20px; 
+    text-align: center; /* Centers the text horizontally */
+    box-shadow: 0 4px 6px rgb(204, 247, 247, 0.8); /* Optional: Add some shadow */
+    z-index: 3;
+    position: fixed; /* Ensure stable positioning */
+}

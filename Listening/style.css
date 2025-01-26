@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(38, 45, 88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.round-shape {
+    display: inline-block; /* Ensures it takes only the required space */
+    width: 200px; /* Set the width of the circle */
+    height: 200px; /* Set the height equal to the width for a perfect circle */
+    border-radius: 50%; /* Makes it circular */
+    background-color: #ffffff; /* Example background color */
+    color: rgb(38, 45, 88); /* Text color */
+    font-size: 28px;
+    letter-spacing: 2px; /* Adds 2 pixels of space between characters */
+    font-family: "Outfit", serif;
+    line-height: 200px; /* Centers the text vertically */
+    text-align: center; /* Centers the text horizontally */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add some shadow */
+    z-index: 3;
+    position: fixed; /* Ensure stable positioning */
+}
+
+.ripple-container {
+    position: fixed;
+    z-index: 2;
+    width: 200px; /* Adjust width */
+    height: 200px; /* Adjust height */
+    border-radius: 50%;
+}
+
+.ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: translate(-50%, -50%); /* Center the ripple */
+    animation: ripple-animation 4s infinite;
+}
+
+@keyframes ripple-animation {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    50% {
+        width: 200px;  /* Maximum size of the ripple */
+        height: 200px;
+        opacity: 0.6;
+    }
+    100% {
+        width: 350px;  /* Final size (expand it further) */
+        height: 350px;
+        opacity: 0;
+    }
+}
+
+#dotContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dot {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(15px);
+}
+
+.timer-box {
+    position: fixed;
+    bottom: 50px; /* Adjusted slightly above the edge */
+    left: 50px;
+    padding: 10px 20px;
+    background-color: white;
+    color:  rgb(38, 45, 88);
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-family: "Outfit", serif;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    text-align: center;
+    width: 120px; /* Set a fixed width */
+}
+
+.restart-button {
+    position: fixed;
+    bottom: 50px; /* 50px from the bottom of the page */
+    left: 50%; /* Aligns to the center horizontally */
+    transform: translateX(-50%); /* Adjusts for the button's own width */
+    background-color: white;
+    color: rgb(38, 45, 88);
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "Outfit", serif;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 11;
+    text-align: center;
+    width: 160px;
+}
+
+.restart-button:hover {
+    background-color: rgb(185, 216, 252);
+  }
+
+.stop-button {
+    position: fixed;
+    bottom: 50px; /* Adjusted slightly above the edge */
+    right: 50px;
+    background-color: white;
+    color:  rgb(38, 45, 88);
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "Outfit", serif;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 11;
+    text-align: center;
+    width: 160px;
+  }
+
+.stop-button:hover {
+    background-color: rgb(185, 216, 252);
+  }

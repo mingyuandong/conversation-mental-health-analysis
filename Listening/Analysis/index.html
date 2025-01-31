@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listening</title>
-    <link rel="stylesheet" href="style.css">  <!-- Link to the external CSS file -->
+    <title>Analysis</title>
+    
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -12,42 +13,89 @@
         body {
             background-color: rgb(38, 45, 88);
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
         }
-        .basic-button {
-            width: 200px;
-            height: 200px;
-            border-radius: 100px;
-            background-color: white;
+
+        .analysis-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .title {
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            font-family: "Outfit", serif;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .analysis-box {
+            width: 80vw;
+            height: calc(100vh - 250px);
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(
+                180deg, 
+                rgb(215, 214, 253),
+                rgb(204, 247, 247)
+            );
+            color: rgb(38, 45, 88);
+            font-size: 14px;
+            font-family: "Outfit", serif;
+            letter-spacing: 0.6px;
+            line-height: 20px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(204, 247, 247, 0.8);
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+
+        .loading {
+            color: rgb(38, 45, 88);
+            font-style: italic;
+        }
+
+        .restart-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-family: "Outfit", serif;
+            color: rgb(38, 45, 88);
+            background-color: rgb(215, 214, 253);
             border: none;
-            font-size: 24px;
+            border-radius: 5px;
             cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .restart-button:hover {
+            background-color: rgb(204, 247, 247);
         }
     </style>
 </head>
 <body>
-    <p style="color: rgb(255, 255, 255); 
-    font-size: 16px; 
-    letter-spacing: 2px;
-    line-height: 1.5;
-    font-family: 'Outfit', serif; 
-    text-align: center; 
-    position: fixed; 
-    top: 50px;">
-    Here is your analysis
-</p>
-
-<div class="analysis-box">text</div>
-
-    <a href="../../Listening/index.html">
-        <button class="restart-button">Restart</button>
-    </a>
-
-    <script src="script.js"></script>
-
+    <div class="analysis-container">
+        <h1 class="title">Here is your analysis</h1>
+        <div class="analysis-box" id="analysis-box">
+            <div class="loading" id="loading-message">Loading analysis...</div>
+        </div>
+        <a href="../index.html">
+            <button class="restart-button">Restart</button>
+        </a>
+    </div>
+    <script src="https://unpkg.com/@picovoice/cheetah-web/dist/iife/index.js"></script>
+    <script src="../script.js"></script>
 </body>
-</html>
 </html>

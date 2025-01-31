@@ -22,25 +22,33 @@
     background-color: rgb(185, 216, 252);
   }
 
-  .analysis-box {
-    display: inline-block; /* Ensures it takes only the required space */
-    width: 80vw; /* Set the width of the circle */
-    top: 120px;
-    bottom: 120px;
-    padding: 20px 10px;
-    border-radius: 2%; /* Makes it circular */
-    background: linear-gradient(
-        180deg, 
-        rgb(215, 214, 253), 
-        rgb(204, 247, 247) 
-    );
-    color:rgb(38, 45, 88); /* Text color */
-    font-size: 14px;
-    font-family: "Outfit", serif;
-    letter-spacing: 0.6px;
-    line-height: 20px; 
-    text-align: center; /* Centers the text horizontally */
-    box-shadow: 0 4px 6px rgb(204, 247, 247, 0.8); /* Optional: Add some shadow */
-    z-index: 3;
-    position: fixed; /* Ensure stable positioning */
+  .analysis-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.analysis-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+.analysis-box::-webkit-scrollbar-thumb {
+    background: rgb(38, 45, 88);
+    border-radius: 4px;
+}
+
+.analysis-box::-webkit-scrollbar-thumb:hover {
+    background: rgb(48, 55, 98);
+}
+
+/* Loading animation */
+@keyframes loading-dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60% { content: '...'; }
+    80%, 100% { content: ''; }
+}
+
+.loading::after {
+    content: '';
+    animation: loading-dots 1.5s infinite;
 }

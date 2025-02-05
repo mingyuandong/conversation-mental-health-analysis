@@ -223,3 +223,59 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem('transcript');
     localStorage.removeItem('analysis');
 });
+
+
+// Create and animate dots
+function createDot() {
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    
+    // Random size between 20px and 100px
+    const size = Math.random() * 80 + 20;
+    dot.style.width = `${size}px`;
+    dot.style.height = `${size}px`;
+    
+    // Random color between (220,255,220) and (255,255,255)
+    const red = Math.floor(Math.random() * 35 + 220);
+    const green = 255;
+    const blue = Math.floor(Math.random() * 35 + 220);
+    dot.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    
+    // Random starting position
+    dot.style.left = `${Math.random() * 100}vw`;
+    dot.style.top = `${Math.random() * 100}vh`;
+    
+    document.getElementById('dotContainer').appendChild(dot);
+    
+    // Animation properties
+    let x = parseFloat(dot.style.left);
+    let y = parseFloat(dot.style.top);
+    let dx = (Math.random() - 0.5) * 0.1; // Slow horizontal movement
+    let dy = (Math.random() - 0.5) * 0.1; // Slow vertical movement
+    
+    function animate() {
+        // Update position
+        x += dx;
+        y += dy;
+        
+        // Bounce off edges
+        if (x < 0 || x > 100) dx = -dx;
+        if (y < 0 || y > 100) dy = -dy;
+        
+        // Apply new position
+        dot.style.left = `${x}vw`;
+        dot.style.top = `${y}vh`;
+        
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
+}
+
+// Add dots when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    // Create 15 dots
+    for (let i = 0; i < 15; i++) {
+        createDot();
+    }
+});

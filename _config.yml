@@ -1,0 +1,9 @@
+exclude:
+  - node_modules
+  - node-v22.13.1-win-x64
+  - package.json
+  - package-lock.json
+  - src
+  - Public
+  - Listening
+  - web-demo

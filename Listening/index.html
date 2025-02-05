@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listening</title>
-    <script src="https://unpkg.com/@picovoice/cheetah-web/dist/iife/index.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <style>
+    <!-- Load Picovoice Cheetah Web SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@picovoice/cheetah-web@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@picovoice/web-voice-processor@latest"></script>
+<style>
         body {
             background-color: rgb(38, 45, 88);
             margin: 0;
@@ -30,24 +32,21 @@
     </style>
 </head>
 <body>
-
-
     <div id="dotContainer"></div>
-    
+   
     <div class="ripple-container">
         <div class="ripple"></div>
         <div class="ripple" style="animation-delay: 1s;"></div>
     </div>
-    
+   
     <div class="round-shape">Listening</div>
-    
+   
     <div class="timer-box" id="timer">00:00</div>
-    
-    <button class="restart-button" onclick="reloadPage()">Restart</button>
-    
-    <button class="stop-button">Stop Session</button>
+   
+    <button class="restart-button" id="restart-button">Restart</button>
+   
+    <button class="stop-button" id="stop-button">Stop Session</button>
 
     <script src="script.js"></script>
-
 </body>
 </html>

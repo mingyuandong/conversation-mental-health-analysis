@@ -1,28 +1,65 @@
-.restart-button {
-    position: fixed;
-    bottom: 50px; /* 50px from the bottom of the page */
-    left: 50%; /* Aligns to the center horizontally */
-    transform: translateX(-50%); /* Adjusts for the button's own width */
-    background-color: white;
+/* Analysis/style.css */
+.analysis-box {
+    width: 80vw;
+    height: calc(100vh - 250px);
+    padding: 30px;
+    border-radius: 15px;
+    background: linear-gradient(
+        180deg,
+        rgb(215, 214, 253),
+        rgb(204, 247, 247)
+    );
     color: rgb(38, 45, 88);
-    border: none;
-    padding: 10px 20px;
-    font-size: 20px;
     font-family: "Outfit", serif;
-    font-weight: 400;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 11;
-    text-align: center;
-    width: 160px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.restart-button:hover {
-    background-color: rgb(185, 216, 252);
-  }
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
 
-  .analysis-box::-webkit-scrollbar {
+.section-title {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    color: rgb(38, 45, 88);
+    font-weight: 600;
+}
+
+.transcript-content {
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+}
+
+.analysis-content {
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+}
+
+.loading {
+    color: rgb(38, 45, 88);
+    font-style: italic;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Maintain existing scrollbar styles */
+.analysis-box::-webkit-scrollbar {
     width: 8px;
 }
 

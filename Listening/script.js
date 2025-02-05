@@ -143,6 +143,7 @@ async function processSession() {
     }
 }
 
+
 // Event Listeners
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("Page loaded, initializing...");

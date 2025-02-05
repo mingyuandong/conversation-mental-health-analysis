@@ -32,7 +32,7 @@
 }
 
 .transcript-content {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.6;
     letter-spacing: 0.5px;
     margin-bottom: 20px;
@@ -42,7 +42,7 @@
 }
 
 .analysis-content {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.7;
     letter-spacing: 0.5px;
     padding: 15px;
@@ -53,7 +53,7 @@
 .loading {
     color: rgb(38, 45, 88);
     font-style: italic;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     padding: 20px;
 }

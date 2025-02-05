@@ -1,33 +1,25 @@
-// Ensure the module is installed before importing
+// script2.js
 import { Cheetah } from "@picovoice/cheetah-web";
 
-async function initCheetah() {
-    const accessKey = "YOUR_ACCESS_KEY"; // Replace with your Picovoice Console access key
-    const model = { publicPath: "/models/cheetah.pv" }; // Ensure the model file exists at this path
 
-    // Callback function to handle transcription results
-    function handleTranscript(cheetahTranscript) {
-        console.log("Transcribed text:", cheetahTranscript.transcript);
-        if (cheetahTranscript.isEndpoint) {
-            console.log("Detected endpoint!");
-        }
-    }
+export async function initCheetah(onTranscriptCallback) {
+  const accessKey = "YOUR_PICOVOICE_ACCESS_KEY"; // Replace with your real access key
+  const model = { publicPath: "/models/cheetah.pv" }; // Ensure the .pv file is placed here
 
-    try {
-        const cheetah = await Cheetah.create(accessKey, handleTranscript, model, {
-            enableAutomaticPunctuation: true
-        });
+  try {
+    const cheetah = await Cheetah.create(
+      accessKey,
+      onTranscriptCallback, // callback that receives partial transcripts
+      model,
+      {
+        enableAutomaticPunctuation: true,
+      }
+    );
 
-        return cheetah;
-    } catch (error) {
-        console.error("Failed to initialize Cheetah:", error);
-    }
+    console.log("Cheetah initialized successfully!");
+    return cheetah;
+  } catch (error) {
+    console.error("Failed to initialize Cheetah:", error);
+    throw error;
+  }
 }
-
-// Example usage
-initCheetah().then((cheetah) => {
-    if (cheetah) {
-        console.log("Cheetah initialized successfully!");
-        // Additional code to interact with Cheetah
-    }
-});

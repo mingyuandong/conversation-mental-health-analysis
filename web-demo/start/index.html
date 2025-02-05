@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start</title>
+
+    <!-- Use a relative path to go "up one level" and include style.css -->
+    <link rel="stylesheet" href="../style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* You can override or add extra styles here, if needed */
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: rgb(38, 45, 88);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .basic-button {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        background-color: white;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p
+      style="
+        color: #fff;
+        font-size: 16px;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        font-family: 'Outfit', serif;
+        text-align: center;
+        position: fixed;
+        top: 50px;
+      "
+    >
+      Record your conversation and get your mental health analysis <br />
+      Powered by Cohere AI
+    </p>
+
+    <a href="../Listening/index.html">
+      <button class="basic-button">START</button>
+    </a>
+  </body>
+</html>

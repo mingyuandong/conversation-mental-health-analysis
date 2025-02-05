@@ -224,7 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem('analysis');
 });
 
-
 // Create and animate dots
 function createDot() {
     const dot = document.createElement('div');
